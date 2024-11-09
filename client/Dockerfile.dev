@@ -1,0 +1,9 @@
+FROM node:lts-alpine
+
+WORKDIR '/app'
+COPY ./package.json ./
+COPY node_modules ./node_modules
+# RUN npm config set prefer-ipv4 true
+# RUN npm install --verbose
+COPY . .
+CMD ["npm", "run", "start"]
